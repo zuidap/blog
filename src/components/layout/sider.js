@@ -1,3 +1,5 @@
+/** @format */
+
 'use client';
 /** @jsxImportSource @emotion/react */
 import { zuidapIcon } from '@/assets/iconUrls';
@@ -7,7 +9,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navItems = [
-  { title: '首页', path: '/home' },
+  { title: '首页', path: '/' },
 
   { title: '笔记', path: '/article' },
   { title: '关于', path: '/about' },
