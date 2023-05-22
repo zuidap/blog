@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // "react-refresh/only-export-components": "warn",
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
+    "react/prop-types": 0, //防止在react组件定义中缺少props验证
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "no-undef": "error"
+  }
 }

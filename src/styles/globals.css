@@ -1,0 +1,80 @@
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 5px; /* 纵向滚动条*/
+  height: 5px; /* 横向滚动条 */
+  background-color: #fff;
+}
+/*定义滚动条轨道 内阴影*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #ffffffa7;
+  background-color: #ccc;
+}
+/*定义滑块 内阴影*/
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px #ffffffa7;
+  background-color: var(--c2);
+  border-radius: 10px;
+}
+
+/*  */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  /* height: 100%;
+  overflow: hidden; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.488rem;
+}
+h2 {
+  font-size: 2.074rem;
+}
+h3 {
+  font-size: 1.728rem;
+}
+h4 {
+  font-size: 1.44rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+:root {
+  --size: "14px";
+  --weight: 400;
+
+  --c1: #f5f7fa;
+  --c2: #4aa891;
+  --c3: #fff;
+  --c4: #000;
+  --c5: gray;
+  --c6: #ddd9d9;
+
+  --xs: "480px";
+  --sm: "576px";
+  --md: "768px";
+  --lg: "992px";
+  --xl: "1024px";
+  --xxl: "1600px";
+
+  background-color: var(--c1);
+  font-size: var(--size);
+  font-weight: var(--weight);
+  color: var(--c4);
+}
