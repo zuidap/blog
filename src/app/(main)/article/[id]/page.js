@@ -4,7 +4,6 @@
 import MdBox from '@/components/mdDetail/MdBox';
 import useTheme from '@/theme/useTheme';
 import { css } from '@emotion/react';
-import { Spin } from 'antd';
 import axios from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 export default function ArticleDetail({ params }) {
@@ -25,7 +24,7 @@ export default function ArticleDetail({ params }) {
 
   return (
     <div css={detailStyle}>
-      {source ? <MdBox source={source} isDark={theme.isDark} /> : <Spin />}
+      <MdBox source={source} isDark={theme.isDark} />
     </div>
   );
 }

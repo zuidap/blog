@@ -1,5 +1,3 @@
-<!-- @format -->
-
 ### Sharp Missing In Production
 
 #### Why This Error Occurred

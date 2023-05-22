@@ -1,4 +1,5 @@
 /** @format */
+
 'use client';
 /** @jsxImportSource @emotion/react */
 import { ArticleCard } from '@/components/home/articleCard';
