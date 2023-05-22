@@ -5,28 +5,37 @@
 import { zuidapIcon } from '@/assets/iconUrls';
 import { css } from '@emotion/react';
 import Image from 'next/image';
-
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 const navItems = [
   { title: '首页', path: '/home' },
   { title: '笔记', path: '/article' },
-  { title: 'AI', path: '/ai' },
   { title: '关于', path: '/about' },
   { title: '我的', path: '/mine' },
 ];
 
 function Sider() {
+  const pathname = usePathname();
   return (
     <div css={leftNavStyle}>
-      <Image css={logoStyle} src={zuidapIcon} alt='logo' />
+      <Image
+        width={200}
+        height={50}
+        css={logoStyle}
+        src={zuidapIcon}
+        alt='logo'
+        priority={true}
+      />
 
       <ul>
         {navItems.map((item) => {
+          const isActive = pathname.startsWith(item.path);
           return (
             <li key={item.title}>
               <Link
-                className={({ isActive }) => (isActive ? 'selected' : '')}
-                href={{ pathname: item.path, query: { id: 1 } }}
+                className={isActive ? 'selected' : ''}
+                href={{ pathname: item.path }}
               >
                 {item.title}
               </Link>
@@ -41,7 +50,6 @@ function Sider() {
 export default Sider;
 
 const logoStyle = css`
-  max-width: 80%;
   object-fit: contain;
   display: block;
   margin: 20px auto;

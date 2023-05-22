@@ -1,15 +1,16 @@
 /** @format */
 'use client';
 /** @jsxImportSource @emotion/react */
-import Footer from '@/components/footer';
-import Sider from '@/components/sider';
+import Footer from '@/components/layout/footer';
+import Header from '@/components/layout/header';
+import Sider from '@/components/layout/sider';
 import { css } from '@emotion/react';
 export default function RootLayout({ children }) {
   return (
     <div css={homeStyle}>
       <Sider />
       <div css={mainStyle}>
-        <div>header</div>
+        <Header />
         <div css={contentStyle}>{children}</div>
         <Footer />
       </div>
@@ -36,5 +37,4 @@ const contentStyle = css`
   max-width: 1024px;
   margin: 0 auto;
   min-height: 100vh;
-  padding-top: 64px;
 `;

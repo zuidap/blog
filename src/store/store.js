@@ -1,7 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
-import themeSlice from "../theme/themeSlice";
-import countSlice from "./slices/countSlice";
+/** @format */
+'use client';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import themeSlice from '../theme/themeSlice';
+import countSlice from './slices/countSlice';
 const store = configureStore({
   reducer: { appTheme: themeSlice, count: countSlice },
   middleware: (getDefaultMiddleware) =>
