@@ -1,19 +1,25 @@
 /** @format */
 'use client';
 /** @jsxImportSource @emotion/react */
-import LottieView from '@/components/commons/LottieView';
-import Footer from '@/components/layout/footer';
+import LottieView from '@/app/components/commons/LottieView';
+import Footer from '@/app/components/layout/footer';
 import useWeather from '@/hook/useWeather';
 import LocalStore from '@/store/localStore';
 import { css } from '@emotion/react';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 function Leader() {
   const vm = useWeather();
   const router = useRouter();
+  useEffect(() => {
+    if (LocalStore.isLogin()) {
+      redirect('/');
+    }
+  }, []);
   return (
     <div css={leader}>
       <div css={contain}>
-        <h1 css={title}>敬请期待</h1>
+        {/* <h1 css={title}>敬请期待</h1> */}
         <div css={today}>
           <div>
             <LottieView jsonPath={vm.iconPath} />
@@ -62,7 +68,7 @@ const title = css`
   color: skyblue;
 `;
 const today = css`
-  margin-top: 20px;
+  margin-top: 80px;
   color: white;
   display: flex;
   flex-direction: column;

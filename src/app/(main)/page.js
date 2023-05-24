@@ -2,8 +2,8 @@
 
 'use client';
 /** @jsxImportSource @emotion/react */
-import { ArticleCard } from '@/components/home/articleCard';
-import ArticleList from '@/components/home/articleList';
+import { ArticleCard } from '@/app/components/home/articleCard';
+import ArticleList from '@/app/components/home/articleList';
 import { css } from '@emotion/react';
 export default function Home() {
   return (

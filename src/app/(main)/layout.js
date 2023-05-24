@@ -1,23 +1,12 @@
 /** @format */
 'use client';
 /** @jsxImportSource @emotion/react */
-import Sider from '@/app/(main)/sider';
-import Footer from '@/components/layout/footer';
-import Header from '@/components/layout/header';
-import LocalStore from '@/store/localStore';
+import Footer from '@/app/components/layout/footer';
+import Header from '@/app/components/layout/header';
+import Sider from '@/app/components/layout/sider';
 import { css } from '@emotion/react';
-import { redirect } from 'next/navigation';
 
-// 判断是否登录
-const isLogin = () => {
-  const token = LocalStore.getToken();
-  if (token === null) {
-    redirect('/leader');
-  }
-};
 export default function RootLayout({ children }) {
-  isLogin();
-  
   return (
     <div css={homeStyle}>
       <Sider />

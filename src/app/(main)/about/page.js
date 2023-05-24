@@ -4,7 +4,7 @@ import LocalStore from '@/store/localStore';
 /** @jsxImportSource @emotion/react */
 import { add, subtract } from '@/store/slices/countSlice';
 import { css } from '@emotion/react';
-import { redirect, usePathname } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 export default function About() {

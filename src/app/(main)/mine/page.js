@@ -1,6 +1,6 @@
 /** @format */
 
-import Minions from '@/components/minions/minions';
+import Minions from '@/app/components/minions/minions';
 export default function Mine() {
   return (
     <div>

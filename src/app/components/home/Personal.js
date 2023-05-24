@@ -1,6 +1,5 @@
 /** @format */
 /** @jsxImportSource @emotion/react */
-import { default as headerIcon } from '@/assets/images/header.jpg';
 import { QqCircleFilled, WechatFilled } from '@ant-design/icons';
 import { css } from '@emotion/react';
 import { Avatar, Divider } from 'antd';
@@ -31,7 +30,7 @@ function Personal() {
         <div css={description}>
           <Avatar
             css={avatar}
-            src={<Image src={headerIcon} alt='avatar' />}
+            src={<Image src='/icon/header.jpg' alt='avatar' />}
           ></Avatar>
           <div>
             <h4>zuidap</h4>

@@ -1,7 +1,7 @@
 /** @format */
 'use client';
 /** @jsxImportSource @emotion/react */
-import MdBox from '@/components/mdDetail/MdBox';
+import MdBox from '@/app/components/mdDetail/MdBox';
 import useTheme from '@/theme/useTheme';
 import { css } from '@emotion/react';
 import axios from 'axios';

@@ -2,7 +2,6 @@
 
 'use client';
 /** @jsxImportSource @emotion/react */
-import { zuidapIcon } from '@/assets/iconUrls';
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,7 +16,6 @@ const navItems = [
 
 function Sider() {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div css={leftNavStyle}>
       <Image
@@ -33,7 +31,7 @@ function Sider() {
           width={200}
           height={50}
           css={logoStyle}
-          src={zuidapIcon}
+          src='/icon/zuidap.svg'
           alt='logo'
           priority={true}
         />

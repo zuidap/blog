@@ -1,6 +1,5 @@
 /** @format */
 /** @jsxImportSource @emotion/react */
-import { articleIcon } from '@/assets/iconUrls';
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import {
@@ -12,7 +11,13 @@ function ArticleCard() {
   return (
     <a href={'/blog/article/2'}>
       <div css={articleCard}>
-        <Image css={articleImage} src={articleIcon} alt='1' />
+        <Image
+          width={230}
+          height={150}
+          css={articleImage}
+          src='/icon/article.jpeg'
+          alt='1'
+        />
         <div css={content}>
           <div css={name} className='selected'>
             vue2+ts笔记

@@ -1,6 +1,5 @@
 /** @format */
 /** @jsxImportSource @emotion/react */
-import { headerIcon } from '@/assets/iconUrls';
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -8,12 +7,12 @@ export default function Header() {
   const pathname = usePathname();
   return (
     <div css={header}>
-      <h3>{pathname}</h3>
+      <h3 style={{ float: 'left', lineHeight: '64px' }}>{pathname}</h3>
       <div css={right}>
         <div css={setting}></div>
       </div>
       <div css={avatar}>
-        <Image width={40} height={40} src={headerIcon} alt='avatar' />
+        <Image width={40} height={40} src='/icon/header.jpg' alt='avatar' />
       </div>
     </div>
   );

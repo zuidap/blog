@@ -10,8 +10,20 @@ import Script from 'next/script';
 //   title: 'zuidap blog',
 //   description: 'zuidap blog',
 // };
-
+import LocalStore from '@/store/localStore';
+import { redirect, usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 export default function RootLayout({ children }) {
+  const pathName = usePathname();
+
+  useEffect(() => {
+    if (!LocalStore.isLogin()) {
+      if (pathName !== '/leader') {
+        redirect('/leader');
+      }
+    }
+  }, [pathName]);
+
   return (
     <html lang='en'>
       <head>

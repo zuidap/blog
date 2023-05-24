@@ -1,3 +1,5 @@
+/** @format */
+
 function setValue(key, message) {
   localStorage.setItem(key, message);
 }
@@ -16,38 +18,42 @@ function getObject(key) {
   return object;
 }
 
+function removeSome(key) {
+  localStorage.removeItem(key);
+}
+
 const LocalStore = {
   isLogin: () => {
-    const user = LocalStore.getUserInfo();
+    const user = LocalStore.getToken();
     const isLoggedIn = user !== null;
     return isLoggedIn;
   },
   setToken: (value) => {
-    setValue("token", value);
+    setValue('token', value);
   },
   getToken: () => {
-    return getValue("token");
+    return getValue('token');
   },
   removeToken: () => {
-    localStorage.removeItem("token");
+    removeSome('token');
   },
   setLoginInfo: ({ loginName, loginPwd, isRemember }) => {
-    setObject("loginInfo", { loginName, loginPwd, isRemember });
+    setObject('loginInfo', { loginName, loginPwd, isRemember });
   },
   getLoginInfo: () => {
-    return getObject("loginInfo");
+    return getObject('loginInfo');
   },
   removeLoginInfo: () => {
-    localStorage.removeItem("loginInfo");
+    removeSome('loginInfo');
   },
   setUserInfo: (user) => {
-    setObject("userInfo", user);
+    setObject('userInfo', user);
   },
   getUserInfo: () => {
-    return getObject("userInfo");
+    return getObject('userInfo');
   },
   removeUserInfo: () => {
-    localStorage.removeItem("userInfo");
+    removeSome('userInfo');
   },
 };
 
