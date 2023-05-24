@@ -10,7 +10,8 @@ export default ArticleList;
 const list = css`
   flex: 1 1 auto;
   max-width: 1024px;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
   & > * {
     margin-bottom: 12px;
     display: block;
@@ -18,6 +19,7 @@ const list = css`
 
   @media (max-width: 1024px) {
     margin-right: 0px;
+    margin-left: 0px;
     max-width: 100%;
   }
 `;

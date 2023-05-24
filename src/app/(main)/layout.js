@@ -1,18 +1,31 @@
 /** @format */
 'use client';
 /** @jsxImportSource @emotion/react */
+import Sider from '@/app/(main)/sider';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
-import Sider from '@/components/layout/sider';
+import LocalStore from '@/store/localStore';
 import { css } from '@emotion/react';
+import { redirect } from 'next/navigation';
+
+// 判断是否登录
+const isLogin = () => {
+  const token = LocalStore.getToken();
+  if (token === null) {
+    redirect('/leader');
+  }
+};
 export default function RootLayout({ children }) {
+  isLogin();
+  
   return (
     <div css={homeStyle}>
       <Sider />
       <div css={mainStyle}>
         <Header />
-        <div css={contentStyle}>{children}</div>
-        <Footer />
+        <div css={contentStyle}>
+          {children} <Footer />
+        </div>
       </div>
     </div>
   );
@@ -26,15 +39,18 @@ const homeStyle = css`
 `;
 const mainStyle = css`
   flex-grow: 1;
-  height: 100%;
   margin: 0 auto;
   margin-left: 200px;
   overflow-y: auto;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 `;
 
 const contentStyle = css`
   width: 100%;
-  max-width: 1024px;
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100%;
+  padding-top: 64px;
+  overflow-y: auto;
 `;

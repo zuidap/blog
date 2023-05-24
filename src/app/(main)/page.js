@@ -25,6 +25,7 @@ const home = css`
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  min-height: 100vh;
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: stretch;

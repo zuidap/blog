@@ -4,10 +4,12 @@
 import LottieView from '@/components/commons/LottieView';
 import Footer from '@/components/layout/footer';
 import useWeather from '@/hook/useWeather';
+import LocalStore from '@/store/localStore';
 import { css } from '@emotion/react';
-
+import { useRouter } from 'next/navigation';
 function Leader() {
   const vm = useWeather();
+  const router = useRouter();
   return (
     <div css={leader}>
       <div css={contain}>
@@ -20,7 +22,18 @@ function Leader() {
             {vm.city}/温度：{vm.temp}°
           </span>
         </div>
+
+        <div
+          css={startBtn}
+          onClick={() => {
+            LocalStore.setToken('login');
+            router.push('/');
+          }}
+        >
+          开始吧
+        </div>
       </div>
+
       <Footer />
     </div>
   );
@@ -63,5 +76,20 @@ const today = css`
   & > span {
     z-index: 20;
     font-size: 12px;
+  }
+`;
+
+const startBtn = css`
+  width: 270px;
+  height: 90px;
+  background-color: #3874cb;
+  color: white;
+  text-align: center;
+  line-height: 90px;
+  border-radius: 12px;
+  font-size: 25px;
+  margin-top: 100px;
+  &:hover {
+    background-color: #3063ba;
   }
 `;
