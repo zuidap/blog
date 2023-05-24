@@ -24,6 +24,7 @@ function Leader() {
           <div>
             <LottieView jsonPath={vm.iconPath} />
           </div>
+          <span>{vm.weather}</span>
           <span>
             {vm.city}/温度：{vm.temp}°
           </span>

@@ -11,6 +11,7 @@ function useWeather() {
     city: '北京',
     temp: '...',
     iconPath: '/lottie/weather/cloudy-03.json',
+    weather: '',
   });
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function useWeather() {
       const temp = weathers?.temperature;
       const weather = weathers?.weather;
       const iconPath = getIcon(weather);
-      setInfo({ city, temp, iconPath });
+      setInfo({ city, temp, iconPath, weather });
     }
   }
 
@@ -63,7 +64,8 @@ function getIcon(weather) {
       .filter((item) => item.name === weather)
       .map((item) => item.path)[0];
   }
-
+  console.log(we);
+  console.log(weather);
   return path + jsonName;
 }
 
@@ -71,12 +73,13 @@ const weathers = [
   { name: '晴', path: 'sunny-day.json', description: '白天、晴、无云' },
   { name: '多云', path: 'cloudy-02.json', description: '白天、晴、少云' },
   { name: '阴', path: 'cloudy.json', description: '白天、晴、多云' },
-  { name: '雨', path: 'cloudy-and-rainny.json', description: '白天、小雨' },
+  { name: '小雨', path: 'cloudy-and-rainny.json', description: '白天、小雨' },
 
   { name: '夜晴', path: 'sunny-hight.json', description: '夜晚、晴、无云' },
   { name: '夜多云', path: 'night.json', description: '夜晚、晴、少云' },
   { name: '夜阴', path: 'night-cloudy.json', description: '夜晚、晴、多云' },
   { name: '夜雨', path: 'night-rain.json', description: '夜晚、雨' },
+  { name: '夜小雨', path: 'night-rain.json', description: '夜晚、雨' },
 
   { name: '霾', path: 'fog.json', description: '雾霾' },
   { name: '扬沙', path: 'fog.json', description: '扬沙' },
